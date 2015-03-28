@@ -6,12 +6,15 @@ private:
 	int numberOfitems;
 	int topOfMyStack;
 	int*items;
+	int peekMe;
 public:
 	MyStack(int size); // contructor
 	virtual ~MyStack(); // decontructor
+	void setPeekItem(int);
+	int getPeekItem();
 	void push(int); // pushing into stact
 	int pop();
-	int peek(); // peeking an item to display
+    void peek(); // peeking an item to display
 	bool isFull(); // check when stack is full
 	bool isEmpty(); // check when it is empty
 
