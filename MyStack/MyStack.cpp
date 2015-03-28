@@ -1,18 +1,59 @@
-/* MyStack program*/
-#define maximumDept = 10; // default size of MyStack
-class MyStack
-{
-private:
-	int numberOfitems;
-	int topOfStack;
-	int*items;
-public:
-	MyStack(int size); // contructor
-	virtual ~MyStack(); // decontructor
-	void push(); // pushing into stact
-	int pop(); 
-	int peek(); // peeking an item to display
-	bool isFull(); // check when stack is full
-	bool isEmpty(); // check when it is empty
+#include"MyStack.h"
+#include<iostream>
+using namespace std;
 
-};
+MyStack::MyStack(int size)// constructor
+{
+	this->numberOfitems = size;
+	items = new int[numberOfitems];
+	int topOfMyStack = -1;
+}
+
+MyStack::~MyStack()// destructor
+{
+	delete[] items;
+}
+
+bool MyStack::isFull()
+{
+	if (topOfMyStack < numberOfitems - 1)
+	{
+		return false; //it is not the top yet
+	}
+	else
+	{
+		return true;
+	}
+
+}
+
+bool MyStack::isEmpty()
+{
+	if (topOfMyStack == 1)
+	{
+		return true; //the stack is empty
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+void MyStack::push(int x)
+{
+	if (!isFull)
+	{
+		items[topOfMyStack] = x;
+	}
+}
+
+int MyStack::pop()
+{
+	int myItem = 0;// value to be popped
+	  if (isEmpty())
+	  {
+		  myItem = items[topOfMyStack];
+	  }
+	  return myItem;
+}
