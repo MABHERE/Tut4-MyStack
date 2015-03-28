@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 
-MyStack::MyStack(int size)// constructor
+MyStack::MyStack(int size = 10)// constructor
 {
 	this->numberOfitems = size;
 	items = new int[numberOfitems]; // allocates memory for the stack
@@ -52,8 +52,8 @@ bool MyStack::isEmpty()
 
 void MyStack::push(int x)
 {
-	bool isvalid = isFull();
-	if (isvalid == true) // check if the stack is full
+	
+	if (!isFull()) // check if the stack is full
 	{
 		topOfMyStack++; // increment topOfMyStack to put an item and not overwritting the previous one
 		items[topOfMyStack] = x; // pusing value into the stack

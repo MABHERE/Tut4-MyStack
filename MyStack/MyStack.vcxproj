@@ -79,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MyStack.cpp" />
+    <ClCompile Include="testMainFunction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyStack.h" />
